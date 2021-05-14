@@ -19,5 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('console/ping', 'ConsoleController@ping');
-Route::post('usuario/registrar', 'UsuarioController@registrar');
-Route::post('usuario/create', 'UsuarioController@create');
+
+Route::post('usuario/registrar', 'UsuarioController@Registrar');
+Route::put('usuario/actualizar_password', 'UsuarioController@ActualizarPassword');
+Route::put('usuario/actualizar_email', 'UsuarioController@ActualizarEmail');
+Route::put('usuario/validar_usuario', 'UsuarioController@ValidarUsuario');

@@ -11,6 +11,7 @@ final class Usuario
     public $email;
     public $validado;
     public $fecha_registro;
+    public $fecha_modificacion;
 
     public function __construct(object $entity)
     {
@@ -21,5 +22,6 @@ final class Usuario
         $this->email = $entity->email;
         $this->validado = $entity->validado;
         $this->fecha_registro = $entity->fecha_registro;
+        $this->fecha_modificacion = $entity->fecha_modificacion;
     }   
 }

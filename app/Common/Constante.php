@@ -4,6 +4,6 @@ namespace App\Common;
 
 abstract class Constante
 {
-    const Estado_Activo = 'A';
-    const Estado_Inactivo = 'I';
+    const ESTADO_ACTIVO = 'A';
+    const ESTADO_INACTIVA = 'I';
 }

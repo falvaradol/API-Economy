@@ -7,27 +7,35 @@ use App\Services\UsuarioService;
 
 class UsuarioController extends Controller
 {
-    public function registrar(Request $request)
+    public function Registrar(Request $request)
     {
         $service = new UsuarioService();    
-        $response = $service->insertar($request);     
+        $response = $service->registrar($request);     
 
         return response()->json($response);
     }
-
     
-    public function create(Request $request)
+    public function ActualizarPassword(Request $request)
     {
-        $usuario_repository = new UsuarioRepository();
+        $service = new UsuarioService();    
+        $response = $service->cambiar_password($request);     
 
-        $user = $usuario_repository->obtener_username('falvarado');
-        $usuario = new UsuarioDto($request);
+        return response()->json($response);        
+    }
+    
+    public function ActualizarEmail(Request $request)
+    {
+        $service = new UsuarioService();    
+        $response = $service->cambiar_email($request);     
 
-        $response = new ResponseDto();
-        $response->data = $user;
-        $response->status = 1;
-        $response->message = "Exito";
+        return response()->json($response);        
+    }
+    
+    public function ValidarUsuario(Request $request)
+    {
+        $service = new UsuarioService();    
+        $response = $service->cambiar_validado($request);     
 
-        return response()->json($response);
+        return response()->json($response);        
     }
 }
